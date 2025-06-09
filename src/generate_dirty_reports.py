@@ -2,9 +2,13 @@ import pandas as pd
 import random
 import os
 
-MASTER_CSV = r"C:\Users\dayrb\Desktop\DGA_Project\data\master_dataset.csv"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-DIRTY_CSV  = r"C:\Users\dayrb\Desktop\DGA_Project\data\dirty_reports.csv"
+# Input dataset used to generate textual reports
+MASTER_CSV = os.path.join(BASE_DIR, "master_dataset.csv")
+
+# Output file with generated noisy textual reports
+DIRTY_CSV = os.path.join(BASE_DIR, "dirty_reports.csv")
 
 N_SAMPLES = 200
 
