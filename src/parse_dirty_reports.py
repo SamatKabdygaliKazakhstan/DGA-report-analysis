@@ -5,9 +5,13 @@ import spacy
 from spacy.pipeline import EntityRuler
 
 
-DIRTY_CSV = r"C:\Users\dayrb\Desktop\DGA_Project\data\dirty_reports.csv"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-PARSED_CSV = r"C:\Users\dayrb\Desktop\DGA_Project\data\parsed_table.csv"
+# Location of the generated textual reports
+DIRTY_CSV = os.path.join(BASE_DIR, "dirty_reports.csv")
+
+# File that will store the parsed numerical values
+PARSED_CSV = os.path.join(BASE_DIR, "parsed_table.csv")
 
 GAS_NAMES = {
     "Hydrogen": ["H2", "H₂", "Hydrogen", "Водород"],

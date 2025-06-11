@@ -3,8 +3,13 @@ import glob
 import os
 
 
-INPUT_DIR = r"C:\Users\dayrb\Desktop\DGA_Project\data\original"
-OUTPUT_FILE = r"C:\Users\dayrb\Desktop\DGA_Project\data\master_dataset.csv"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# Folder containing the raw CSV files shipped with the repository
+INPUT_DIR = os.path.join(BASE_DIR, "original")
+
+# Destination for the combined dataset
+OUTPUT_FILE = os.path.join(BASE_DIR, "master_dataset.csv")
 
 def main():
     csv_files = glob.glob(os.path.join(INPUT_DIR, "*.csv"))
